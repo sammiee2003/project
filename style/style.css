@@ -1,10 +1,13 @@
+body{
+    background-color: rgb(247, 242, 235);
+}
 #gewicht{
     width: 20px;
     height: 20px;
 }
 
 .dropbtn {
-    background-color: rgb(245, 219, 185);
+    background-color: rgb(194, 190, 186);
     color: rgb(3, 2, 2);
     padding: 16px;
     font-size: 16px;
@@ -19,7 +22,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(245, 219, 185);
+    background-color: rgb(194, 190, 186);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -32,8 +35,8 @@
     display: block;
   }
   
-  .dropdown-content a:hover {background-color: #ebd2bb;}
+  .dropdown-content a:hover {background-color: #9e9c9a;}
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #ebd2bb;}
+  .dropdown:hover .dropbtn {background-color: #9e9c9a;}
