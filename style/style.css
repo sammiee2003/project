@@ -1,46 +1,58 @@
 body{
-  background-color: rgb(247, 242, 235);
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  
 }
-#gewicht{
-  width: 20px;
-  height: 20px;
-}
-
-.dropbtn {
-  background-color: rgb(194, 190, 186);
-  color: rgb(3, 2, 2);
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+header{
+  background-color: orange;
+  height: 30%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+#uitvouwmenu{
+  background-image: url("images/gewicht.png");
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgb(194, 190, 186);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+#menu{
+  width: 20%;
+  background-color: rgb(253, 173, 23);
+  padding: 0;
+  margin:0;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+#menu ul{
+  font-size: 20px;
+  
+}
+
+#menu li:hover{
+ background: orange;
+  
+  
+}
+
+#menu a{
   text-decoration: none;
+  color: black;
+}
+
+#menu li ul{
+  display: none;
+}
+#menu li:hover ul{
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #9e9c9a;}
 
-.dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #9e9c9a;}
 
+main{
+  height: 50% ;
+  width: 50%;
+}
 #instagram{
   margin-top: 40%;
 }
