@@ -13,14 +13,18 @@ header{
 }
 
 #uitvouwmenu{
-  background-image: url("images/gewicht.png");
+ height: 7%;
+  width: 7%;
 }
+
+
 
 #menu{
   width: 20%;
   background-color: rgb(253, 173, 23);
-  padding: 0;
-  margin:0;
+  
+  
+  
 }
 
 #menu ul{
