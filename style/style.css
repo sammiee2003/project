@@ -13,6 +13,11 @@ body{
   display: flex;
 }
 
+#gewichtje{
+  height: 20%;
+  width: 20%;
+}
+
 #headerlinks{
   flex-direction:row ;
   width: 20%;
