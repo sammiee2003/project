@@ -61,6 +61,11 @@ body{
     width: 80%;
     background-color: orange;
 }
+#sluit{
+  
+  background-color: orange;
+  border: 2px solid black;
+}
 
 
 main{
