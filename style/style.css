@@ -5,8 +5,8 @@ body{
   
 }
 #header{
-  background-color: orange;
-  height: 30%;
+  
+  height: 40%;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -26,7 +26,7 @@ body{
   
 }
 #menu{
-  background-color: rgb(253, 173, 23);
+  background-color: orange;
   display: none;
   
   
@@ -57,8 +57,9 @@ body{
 
 #headerrechts{
     flex-direction: row;
-    height: 100%;
+    height: 72px;
     width: 80%;
+    background-color: orange;
 }
 
 
