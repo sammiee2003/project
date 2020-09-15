@@ -18,31 +18,26 @@ body{
   width: 20%;
 }
 
+/* menu */
+
 #headerlinks{
   flex-direction: row ;
   width: 20%;
   height: 100%;
   background-color: orange;
-  
-  
 }
+
 #menu{
   background-color: orange;
   display: none;
-  border-radius: 4%;
-  
-  
 }
 
 #menu ul{
   font-size: 20px;
-  
 }
 
 #menu li:hover{
- background: orange;
-  
-  
+ background: orange; 
 }
 
 #menu a{
@@ -53,6 +48,7 @@ body{
 #menu li ul{
   display: none;
 }
+
 #menu li:hover ul{
   display: block;
 }
@@ -63,12 +59,13 @@ body{
     width: 80%;
     background-color: orange;
 }
+
 #sluit{
-  
   background-color: orange;
   border: 2px solid black;
 }
 
+<<<<<<< HEAD
 #winkelwagen{
   height: 90%;
   width: 5%;
@@ -77,6 +74,9 @@ body{
   margin-left: 70%;
   
 }
+=======
+/* overig */
+>>>>>>> 9b5d131bc1a42d811ed1b8d5a4637d2313ee5060
 
 main{
   height: 50% ;
@@ -86,11 +86,12 @@ main{
   margin-top: 40%;
 }
 
+/* icons */
+
 #insta{
   height: 1.6%;
   width: 1.6%;
 }
-
 
 #phone, #gm{
   height: 1.6%;
@@ -149,3 +150,10 @@ footer{
     transform: translate(-50%, -50%);
     font-size: 90%;
 }
+
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
