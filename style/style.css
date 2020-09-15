@@ -18,29 +18,26 @@ body{
   width: 20%;
 }
 
+/* menu */
+
 #headerlinks{
   flex-direction: row ;
   width: 20%;
   height: 100%;
   background-color: orange;
-  
 }
+
 #menu{
   background-color: orange;
   display: none;
-  
-  
 }
 
 #menu ul{
   font-size: 20px;
-  
 }
 
 #menu li:hover{
- background: orange;
-  
-  
+ background: orange; 
 }
 
 #menu a{
@@ -51,6 +48,7 @@ body{
 #menu li ul{
   display: none;
 }
+
 #menu li:hover ul{
   display: block;
 }
@@ -61,12 +59,13 @@ body{
     width: 80%;
     background-color: orange;
 }
+
 #sluit{
-  
   background-color: orange;
   border: 2px solid black;
 }
 
+/* overig */
 
 main{
   height: 50% ;
@@ -76,11 +75,12 @@ main{
   margin-top: 40%;
 }
 
+/* icons */
+
 #insta{
   height: 1.6%;
   width: 1.6%;
 }
-
 
 #phone, #gm{
   height: 1.6%;
