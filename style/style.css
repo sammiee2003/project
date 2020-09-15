@@ -19,12 +19,12 @@ body{
 }
 
 #headerlinks{
-  flex-direction:row ;
+  flex-direction: row ;
   width: 20%;
   height: 100%;
   background-color: orange;
   
-
+}
 #menu{
   background-color: rgb(253, 173, 23);
   display: none;
@@ -96,13 +96,14 @@ footer{
 
 .wrapper{
 	position: absolute;
-    top: 50%;
-    left: 50%;
+    width: 18%;
+    height: 5%;
+    margin-top: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0,0.6);
     max-width: 550px;
-    width: 100%;
-    padding: 15px;
+    margin-left: 70%;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     border-radius: 5px;
