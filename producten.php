@@ -14,7 +14,7 @@
         <div id="headerlinks">
             <img src="images/gewicht.png" id="gewichtje" onclick="toonmenu('toon')">
             <div id="menu">
-                <ul>
+                <ul><br>
                     <li><a href="project.html">Home</a></li>
                     <li><a href="producten.php">Producten</a>
                         <ul class="drop">
@@ -23,13 +23,13 @@
                             <li><a href="andere.php">Andere sport artikelen</li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="inloggen.php">Inloggen</a></li>
-                </ul>
+                </ul><br>
                 <button onclick="toonmenu('sluit')" id="sluit">sluit menu</button>
 
-            
-            
+
+
             </div>
         </div>
         <div id="headerrechts"> 
