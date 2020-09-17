@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <script src="script.js"></script>
+    
 
 </head>
 
@@ -48,7 +48,6 @@
     <main>
 
 
-
     </main>
 
     <footer>
@@ -69,7 +68,13 @@
 
             </div>
         </div>
+
+        <div id="vandaag">
+
+</div>
+
     </footer>
+    <script src="script.js"></script>
 
 </body>
 
