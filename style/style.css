@@ -234,6 +234,10 @@ body{
 }
 /* overig */
 
+main{
+  height: 100%;
+  width: 100%;
+}
 h1{
   text-align: center;
 }
@@ -392,4 +396,8 @@ footer{
 
 .nav-icon:hover div {
   transform: scale(0);
-} /*
+} */
+
+/*betaal style*/
+
+
