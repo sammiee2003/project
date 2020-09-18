@@ -151,7 +151,7 @@ session_start();
                 <title>Login</title>
                 </head>
                 <body>
-                <h2>Login</h2>
+                
                 
                 <?php
                     if(isset($_GET['error']))
@@ -163,6 +163,8 @@ session_start();
                     }
                 ?>
                     <form method='post'>  
+                        <div id="login">
+                            <h2>Login</h2>
                                 <table>  
                                     <tr>  
                                         <td>Gebruikersnaam:</td>  
@@ -176,6 +178,7 @@ session_start();
                                         <td><input type='submit' name='submit' value='Login'></td>  
                                     </tr>  
                                 </table>  
+                                </div>
                     </form>
                       
                 </body>
