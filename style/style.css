@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0; 
+}
+
 body{
   background-color: rgb(255, 255, 255);
   margin: 0;
@@ -18,7 +23,7 @@ body{
   width: 20%;
 }
 
-/* menu */
+/* header links */
 
 #headerlinks{
   flex-direction: row ;
@@ -52,7 +57,7 @@ body{
 #menu li:hover ul{
   display: block;
 }
-
+ /* header rechts*/
 #headerrechts{
     flex-direction: row;
     height: 100%;
@@ -67,46 +72,6 @@ body{
   height: 40%;
   border-radius: 45%;
 }
-
-#winkelwagen{
-  height: 90%;
-  width: 5%;
-  margin: 0;
-  padding: 0;
-  margin-left: 70%;
-  
-}
-/* overig */
-
-main{
-  height: 50% ;
-  width: 50%;
-}
-#instagram{
-  margin-top: 40%;
-}
-
-/* icons */
-
-#insta{
-  height: 1.6%;
-  width: 1.6%;
-}
-
-#phone, #gm{
-  height: 1.6%;
-  width: 1.6%;
-}
-
-footer{
-  background-color: orange;
-  height: 30%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-/* searchbar */
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
@@ -151,79 +116,6 @@ footer{
     font-size: 90%;
 }
 
-
-* {
-  margin: 0;
-  padding: 0; 
-}
-
-body{
-  background-color: rgb(255, 255, 255);
-  margin: 0;
-  padding: 0;
-  
-}
-#header{
-  
-  height: 40%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-#gewichtje{
-  height: 20%;
-  width: 20%;
-}
-
-/* menu */
-
-#headerlinks{
-  flex-direction: row ;
-  width: 20%;
-  height: 100%;
-  background-color: orange;
-}
-
-#menu{
-  background-color: orange;
-  display: none;
-}
-
-#menu ul{
-  font-size: 20px;
-}
-
-#menu li:hover{
- background: orange; 
-}
-
-#menu a{
-  text-decoration: none;
-  color: black;
-}
-
-#menu li ul{
-  display: none;
-}
-
-#menu li:hover ul{
-  display: block;
-}
-
-#headerrechts{
-    flex-direction: row;
-    height: 100%;
-    width: 80%;
-    background-color: orange;
-}
-
-#sluit{
-  background-color: orange;
-  border: 2px solid black;
-}
-
 #winkelwagen{
   height: 90%;
   width: 5%;
@@ -232,12 +124,46 @@ body{
   margin-left: 70%;
   
 }
-/* overig */
+
+/* icons */
+
+#insta{
+  height: 1.6%;
+  width: 1.6%;
+}
+
+#phone, #gm{
+  height: 1.6%;
+  width: 1.6%;
+}
+
+/*footer*/
+
+footer{
+  background-color: orange;
+  height: 30%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+/* main product.html */
 
 main{
   height: 100%;
   width: 100%;
 }
+
+
+
 h1{
   text-align: center;
 }
@@ -251,8 +177,8 @@ h1{
 }
 
 #main{
-  height: 100% ;
-  width: 100%;
+  height: 50% ;
+  width: 80%;
   display: flex;
   flex-direction: row;
 }
@@ -292,90 +218,9 @@ h1{
 }
 
 
-#instagram{
-  
-}
-
-/* icons */
-
-#insta{
-  height: 1.6%;
-  width: 1.6%;
-}
-
-#phone, #gm{
-  height: 1.6%;
-  width: 1.6%;
-}
-
-/* footer */
-
-footer{
-  background-color: orange;
-  height: 30%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-#contact{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-}
-
-/* searchbar */
-
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 
-.wrapper{
-	position: absolute;
-    width: 18%;
-    height: 5%;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0,0.6);
-    margin-left: 70%;
-    padding: 0.5%;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
-    margin-top: 2%;
-   
-}
 
-.wrapper .input {
-    width: 85%;
-    padding: 5% 10%;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.searchbtn {
-    background: orange;
-    width: 10%;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-}
-
-.searchbtn .fas{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 90%;
-}
-
-
-* {
-  margin: 0;
-  padding: 0; 
-}
 
 /* hamburger icon menu  */
 
@@ -408,4 +253,6 @@ footer{
   transform: scale(0);
 } */
 
-/* betaal style */
+/*betaal style*/
+
+
