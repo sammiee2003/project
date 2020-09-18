@@ -187,7 +187,7 @@ session_start();
 
     </main>
 
-    <footer>
+    <footer class="footer">
         <div id="instagram">
             <p>Social media</p>
             <a href="https://www.w3schools.com/"></a>

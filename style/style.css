@@ -57,7 +57,9 @@ body{
 #menu li:hover ul{
   display: block;
 }
- /* header rechts*/
+ 
+/* header rechts*/
+
 #headerrechts{
     flex-direction: row;
     height: 100%;
@@ -74,7 +76,6 @@ body{
 }
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
-
 
 .wrapper{
 	position: absolute;
@@ -145,6 +146,8 @@ footer{
   width: 100%;
   padding: 0;
   margin: 0;
+  
+ 
 }
 
 #contact{
@@ -158,7 +161,7 @@ footer{
 /* main product.html */
 
 main{
-  height: 100%;
+  height: 600px;
   width: 100%;
 }
 
@@ -187,7 +190,7 @@ h1{
 #div1{
   flex-direction: row;
   background-color: rgb(255, 255, 255);
-  height: 490px;
+  height: 400px;
   width: 500px;
   margin-top: 50px;
   margin-left: 100px;
@@ -197,7 +200,7 @@ h1{
 #div2{
   flex-direction: row;
   background-color: rgb(255, 255, 255);
-  height: 490px;
+  height: 400px;
   width: 500px;
   margin-top: 50px;
   margin-left: 50px;
@@ -208,7 +211,7 @@ h1{
   flex-direction: row;
   background-color: orange;
   width: 350px;
-  height: 700px;
+  height: 600px;
   margin-top:0px;
   margin-left: 290px;
   border: 2px solid black;
