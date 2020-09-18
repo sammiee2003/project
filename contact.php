@@ -94,6 +94,9 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST' && (!empty($antiflood) || empty($_POST
         
   // HTML e-mail formlier
   echo '<form method="post" action="' . $_SERVER['REQUEST_URI'] . '" />
+
+<div id= "contact"
+
   <p>
   
       <label for="naam">Naam:</label><br />
@@ -110,6 +113,7 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST' && (!empty($antiflood) || empty($_POST
       
       <input type="submit" name="submit" value=" Versturen " />
   </p>
+  </div
   </form>';
 }
 // versturen naar
