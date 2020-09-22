@@ -1,1 +1,3 @@
-/*CREATE DATABASE musclemania;/*
+/*CREATE DATABASE musclemania;*/
+
+USE musclemania;
