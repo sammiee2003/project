@@ -71,7 +71,7 @@
 //     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 // }
 
-// session_start();
+session_start();
 
 // include 'conn.php';
 
@@ -183,9 +183,9 @@
                         }
                     }
                 ?>
-                    <form method='post'>  
+                    <form method='post' class="form-5 clearfix" >  
                         <div id="login">
-                            <h2>Login</h2>
+                            <h2>Gebruikers login</h2>
                                 <table>  
                                     <tr>  
                                         <td>Gebruikersnaam:</td>  

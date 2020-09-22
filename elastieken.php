@@ -64,6 +64,7 @@
                 <p>Tobias: 06 3601 1018 </p>
                 <p>Casper: 06 3121 5244</p>
                 <img id="gm" src="images/Gmail.png">
+                <p>musclemania.net@gmail.com</p>
 
 
             </div>
