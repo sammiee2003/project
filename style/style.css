@@ -267,6 +267,17 @@ h1{
 
 /*betaal style*/
 
+.betaalmenu{
+  font-size: 20px;
+  
+}
+#continue{
+  background-color: orange;
+}
+
+/* test login style */
+
+
 
 /* contact button */
 input[type=submit]{
