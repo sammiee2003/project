@@ -178,6 +178,13 @@ main{
 
 h1{
   text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.phome{
+  font-size: 20px;
+  text-align: center;
 }
 
 #container{
@@ -230,40 +237,6 @@ h1{
 }
 
 
-
-
-
-
-/* hamburger icon menu  */
-
-/* *.nav-icon { 
-  margin: 1em;
-  width: 40px;
-}
-
-.nav-icon:after, 
-.nav-icon:before, 
-.nav-icon div {
-  background-color: #fff;
-  border-radius: 3px;
-  content: '';
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all .2s ease-in-out;
-}
-
-.nav-icon:hover:before {
-  transform: translateY(12px) rotate(135deg);
-}
-
-.nav-icon:hover:after {
-  transform: translateY(-12px) rotate(-135deg);
-}
-
-.nav-icon:hover div {
-  transform: scale(0);
-} */
 
 /*betaal style*/
 
