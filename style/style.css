@@ -178,6 +178,13 @@ main{
 
 h1{
   text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.phome{
+  font-size: 20px;
+  text-align: center;
 }
 
 #container{
@@ -202,7 +209,7 @@ h1{
   height: 400px;
   width: 500px;
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 80px;
   border: 2px solid black;
 }
 
@@ -222,8 +229,8 @@ h1{
   width: 350px;
   height: 600px;
   margin-top:0px;
-  margin-left: 290px;
-  border: 2px solid black;
+  margin-left: 300px;
+  
   float: right;
   margin: 0;
   padding: 0;
@@ -231,44 +238,10 @@ h1{
 
 
 
-
-
-
-/* hamburger icon menu  */
-
-/* *.nav-icon { 
-  margin: 1em;
-  width: 40px;
-}
-
-.nav-icon:after, 
-.nav-icon:before, 
-.nav-icon div {
-  background-color: #fff;
-  border-radius: 3px;
-  content: '';
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all .2s ease-in-out;
-}
-
-.nav-icon:hover:before {
-  transform: translateY(12px) rotate(135deg);
-}
-
-.nav-icon:hover:after {
-  transform: translateY(-12px) rotate(-135deg);
-}
-
-.nav-icon:hover div {
-  transform: scale(0);
-} */
-
 /*betaal style*/
 
 .betaalmenu{
-  font-size: 20px;
+  font-size: 15px;
   
 }
 #continue{
