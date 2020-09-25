@@ -274,7 +274,7 @@
 /* test login style */
 
 
-.form-5 {
+/* .form-5 {
     width: 300px;
     margin: 60px auto 30px;
     position: relative;
@@ -343,7 +343,8 @@
           color: #fff;
           text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
           font-family: 'Handlee', cursive;
-    }
+    }*/
+
         input[type=submit]{
         width: 8%;
         height: 50px;
@@ -361,4 +362,4 @@
         margin-top: 10px;
         margin-left: 10px;
         margin-bottom: 10px;
-        } 
+        }  
