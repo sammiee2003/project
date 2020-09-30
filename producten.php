@@ -199,7 +199,7 @@
         <div id="vandaag">
 
 </div>
-c scijf
+
     </footer>
     <script src="script.js"></script>
 </body>
