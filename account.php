@@ -106,11 +106,7 @@
                         <label>City/Town *</label>
                     </div>
                 </div>
-                <div class="txt_field">
-                    <input type="text" required>
-                    <span></span>
-                    <label>state</label>
-                </div>
+                
                 <div class="txt_field">
                     <input type="tel" required>
                     <span></span>

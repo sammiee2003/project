@@ -196,38 +196,118 @@
   }
   
   
-  #div1{
+  main {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   background-color: rgb(247, 232, 205);
+}
+
+.next {
+    display: flex;
     flex-direction: row;
-    background-color: rgb(255, 255, 255);
-    height: 400px;
-    width: 500px;
-    margin-top: 50px;
-    margin-left: 100px;
-    border: 2px solid black;
-  }
-  
-  #div2{
-    flex-direction: row;
-    background-color: rgb(255, 255, 255);
-    height: 400px;
-    width: 500px;
-    margin-top: 50px;
-    margin-left: 50px;
-    border: 2px solid black;
-  }
-  
-  #reclame{
-    flex-direction: row;
-    background-color: orange;
-    width: 350px;
-    height: 600px;
-    margin-top:0px;
-    margin-left: 290px;
-    border: 2px solid black;
-    float: right;
-    margin: 0;
-    padding: 0;
-  }
+}
+
+.next p {
+    margin: 50px;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+.partOneInfo {
+    position: relative;
+    top: 50%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 0 0;
+    width: 16vw;
+    height: 100%;
+    background: transparent;
+    font-family: 'DM Mono', monospace;
+    margin-top: 30px;
+}
+
+.partOneInfo form {
+    box-sizing: border-box;
+    width: 16vw;
+    color: rgb(0, 0, 0);
+}
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #000000;
+    width: 16vw;
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 16vw;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: rgb(0, 0, 0);
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .4s;
+    font-family: 'DM Mono', monospace;
+}
+
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    transition: .4s;
+}
+
+.txt_field input:focus~label, .txt_field input:valid~label {
+    top: -5px;
+    color: rgb(3, 2, 2), 0, 0;
+    font-family: 'DM Mono', monospace;
+}
+
+.txt_field input:focus~span::before, .txt_field input:valid~span::before {
+    width: 16vw;
+}
+
+input[type="submit"] {
+    width: 16vw;
+    height: 42px;
+    border: transparent 2px solid;
+    background: #ffc505;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: .2s;
+    font-family: 'DM Mono', monospace;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 30px;
+    margin: 40px 0 40px 0;
+}
+
+input[type="submit"]:hover {
+    background: #ffd900;
+}
   
   
   
