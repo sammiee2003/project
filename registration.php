@@ -3,9 +3,44 @@
 <head>
     <meta charset="utf-8"/>
     <title>Registration</title>
-    <link rel="stylesheet" href="inlog.css"/>
+    <link rel="stylesheet" href="style/inlog.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
 </head>
-<body>
+<body><div id="header">
+        <div id="headerlinks">
+            <img src="images/gewicht.png" id="gewichtje" onclick="toonmenu('toon')">
+            <div id="menu" >
+                <ul><br>
+                    <li ><a href="project.html" class="betaalmenu">Home</a></li>
+                    <li><a href="producten.php" class="betaalmenu">Producten</a>
+                        <ul class="drop">
+                            <li><a href="gewichten.php" class="betaalmenu">Gewichten</a></li>
+                            <li><a href="elatieken.php" class="betaalmenu">Elastieken</a></li>
+                            <li><a href="andere.php" class="betaalmenu">Andere sport artikelen</li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.php" class="betaalmenu">Contact</a></li>
+                    <li><a href="testlog.php" class="betaalmenu">Inloggen</a></li>
+                </ul><br>
+                <button onclick="toonmenu('sluit')" id="sluit" class="button3">sluit menu</button>
+
+               
+
+
+            </div>
+        </div>
+        <div id="headerrechts">
+            <div class="wrapper">
+                <input type="text" class="input" placeholder="Waar bent u naar opzoek?">
+                <div class="searchbtn"><i class="fas fa-search"></i></div>
+            </div>
+
+            <img src="images/shoppingcart.png" id="winkelwagen">
+        </div>
+    </div>
+
 <?php
     require('db.php');
     // When form submitted, insert values into the database.
@@ -46,5 +81,30 @@
 <?php
     }
 ?>
+<footer>
+        <div id="instagram">
+            <p>Social media</p>
+            <a href="https://www.w3schools.com/"></a>
+            <img id="insta" src="images/insta.svg">
+            </a>
+        </div>
+
+        <div id="contact">
+            <div id="contactgegevens">Contactgegevens
+                <img id="phone" src="images/phone.png">
+                <p>Tobias: 06 3601 1018 </p>
+                <p>Casper: 06 3121 5244</p>
+                <img id="gm" src="images/Gmail.png">
+                <p>musclemania.net@gmail.com</p>
+
+
+            </div>
+        </div>
+
+        <div id="vandaag">
+
+</div>
+
+    </footer>
 </body>
 </html>
