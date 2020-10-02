@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/account.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    
    
 
 </head>
@@ -58,26 +59,26 @@
                     <div class="txt_field">
                         <input type="password" required>
                         <span></span>
-                        <label>Password *</label>
+                        <label>Wachtwoord *</label>
                     </div>
                     <p></p>
                     <div class="txt_field">
                         <input type="password" required>
                         <span></span>
-                        <label>Confirm password *</label>
+                        <label>Bevestig wachtwoord *</label>
                     </div>
                 </div>
                 <div class="next">
                     <div class="txt_field">
                         <input type="text" required>
                         <span></span>
-                        <label>Name *</label>
+                        <label>Voornaam *</label>
                     </div>
                     <p></p>
                     <div class="txt_field">
                         <input type="text" required>
                         <span></span>
-                        <label>Last name *</label>
+                        <label>Achternaam *</label>
                     </div>
                 </div>
                 <div class="next">
@@ -97,20 +98,20 @@
                     <div class="txt_field">
                         <input type="text" required>
                         <span></span>
-                        <label>ZIP code *</label>
+                        <label>Post code *</label>
                     </div>
                     <p></p>
                     <div class="txt_field">
                         <input type="text" required>
                         <span></span>
-                        <label>City/Town *</label>
+                        <label>Stad/dorp *</label>
                     </div>
                 </div>
                 
                 <div class="txt_field">
                     <input type="tel" required>
                     <span></span>
-                    <label>Phone number</label>
+                    <label>Telefoon nummer</label>
                 </div>
                 <input type="submit" value="create account">
             </form>
