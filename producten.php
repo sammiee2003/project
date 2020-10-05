@@ -45,7 +45,9 @@
                 <div class="searchbtn"><i class="fas fa-search"></i></div>
             </div>
             
-            <img src="images/shoppingcart.png" id="winkelwagen">
+            <a href="winkelwagen.php" target="_blank">
+            <img src="images/shoppingcart.png" id="winkelwagen" onclick="">
+          </a>
         </div>
     </div>
 
