@@ -24,7 +24,7 @@
                         </ul>
                     </li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="inloggen.php">Inloggen</a></li>
+                    <li><a href="login.php">Inloggen</a></li>
                 </ul><br>
                 <button onclick="toonmenu('sluit')" id="sluit">sluit menu</button>
 
