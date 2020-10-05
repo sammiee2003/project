@@ -22,7 +22,7 @@
                         </ul>
                     </li>
                     <li><a href="contact.php" class="betaalmenu">Contact</a></li>
-                    <li><a href="testlog.php" class="betaalmenu">Inloggen</a></li>
+                    <li><a href="login.php" class="betaalmenu">Inloggen</a></li>
                 </ul><br>
                 <button onclick="toonmenu('sluit')" id="sluit" class="button3">sluit menu</button>
 
