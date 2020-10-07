@@ -16,11 +16,11 @@
 
       <div id="menu">
         <ul><br>
-          <li><a href="project.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="producten.php">Producten</a>
             <ul class="drop">
               <li><a href="gewichten.php">Gewichten</a></li>
-              <li><a href="elatieken.php">Elastieken</a></li>
+              <li><a href="elastieken.php">Elastieken</a></li>
               <li><a href="andere.php">Andere sport artikelen</li>
             </ul>
           </li>
