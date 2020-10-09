@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/project1/project/style/header.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <title>Document</title>
-    <link  rel="stylesheet" href="style/style.css">
-    <script src="script.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-sm " id="nav">
+      <a class="navbar-brand" href="#">logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div id="header">
-    <div id="headerlinks">
-      <img src="images/gewicht.png" id="gewichtje" onclick="toonmenu('toon')">
-
-
-      <div id="menu">
-        <ul><br>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="producten.php">Producten</a>
-            <ul class="drop">
-              <li><a href="gewichten.php">Gewichten</a></li>
-              <li><a href="elastieken.php">Elastieken</a></li>
-              <li><a href="andere.php">Andere sport artikelen</li>
-            </ul>
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/project1/project/index.php" id="link">Home</a>
           </li>
-          <li><a href="contact.php">Contact</a></li>
-          <li><a href="login.php">Inloggen</a></li>
-        </ul><br>
-        <button onclick="toonmenu('sluit')" id="sluit" class="button3">sluit menu</button>
-
-        <!-- <a href="something" class="button3">Button</a> -->
-
-
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Producten</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown03" id="dropdown">
+              <a class="dropdown-item" href="/project1/project/producten.php">Alle Producten</a>
+              <a class="dropdown-item" href="/project1/project/gewichten.php">Gewichten</a>
+              <a class="dropdown-item" href="/project1/project/elastieken.php">Elastieken</a>
+              <a class="dropdown-item" href="/project1/project/andere.php">Andere sportartikelen</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project1/project/contact.php">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project1/project/login.php">Inloggen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project1/project/winkelwagen.php"><img src="/project1/project/images/shoppingcart.png" id="winkelwagen"></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
       </div>
-    </div>
-    <div id="headerrechts">
-      <div class="wrapper">
-        <input type="text" class="input" placeholder="Waar bent u naar opzoek?">
-        <div class="searchbtn"><i class="fas fa-search"></i></div>
-      </div>
-
-      <a href="winkelwagen.php" target="_blank">
-        <img src="images/shoppingcart.png" id="winkelwagen" onclick="">
-      </a>
-    </div>
-
-
-  </div>
+    </nav>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

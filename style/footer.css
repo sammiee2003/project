@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0; 
+  }
+  
+  body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    width:100%;
+    
+  }
+  
+  
+  /* icons */
+  
+  #insta{
+    height: 1.6%;
+    width: 1.6%;
+  }
+  
+  #phone, #gm{
+    height: 1.6%;
+    width: 1.6%;
+  }
+  
+  /*footer*/
+  
+  
+  
+  footer{
+    background-color: orange;
+    height: 30%;
+    width: 100%;
+    
+    padding: 0;
+    margin-top: 20px;
+    bottom: 0;
+    
+    
+   
+  }
+  
+  #contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  
+  /* login pagina */
+  
+  #login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* main product.html */
+  
+  main{
+    height: 600px;
+    width: 100%;
+  }
+  
+  
+  
+  h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .phome{
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  
+  
+  
+  /*betaal style*/
+  
+  .betaalmenu{
+    font-size: 15px;
+    
+  }
+  #continue{
+    background-color: orange;
+  }
+  

@@ -1,3 +1,24 @@
-.nav-link{
-    color: black;
+nav{
+    background-color: orange;
 }
+
+
+
+.nav-link{
+    color:black;
+    font-size: 20px
+}
+
+#dropdown{
+    background-color: orange;
+}
+
+#winkelwagen{
+    height: 30px;
+    width: 3%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    
+    
+  }

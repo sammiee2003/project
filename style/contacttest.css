@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0; 
+    height: 100%;
+    width: 100%;
+  }
+  
+  body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
+  }
+  
+  
+  /* icons */
+  
+  #insta{
+    height: 1.6%;
+    width: 1.6%;
+  }
+  
+  #phone, #gm{
+    height: 1.6%;
+    width: 1.6%;
+  }
+  
+  /*footer*/
+  
+  
+  
+  footer{
+    background-color: orange;
+    height: 30%;
+    width: 100%;
+    margin: ;
+    padding: 0;
+    margin-top: 20px;
+    bottom: 0;
+    
+    
+   
+  }
+  
+  #contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  
+  /* login pagina */
+  
+  #login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* main product.html */
+  
+  main{
+    height: 600px;
+    width: 100%;
+  }
+  
+  
+  
+  h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .phome{
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  #container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #main{
+    height: 50% ;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  #div1{
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    height: 400px;
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 80px;
+    border: 2px solid black;
+  }
+  
+  #div2{
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    height: 400px;
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 70px;
+    border: 2px solid black;
+  }
+  
+  #reclame{
+    flex-direction: row;
+    background-color: orange;
+    width: 320px;
+    height: 600px;
+    margin-top:0px;
+    margin-left: 370px;
+    
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  /*betaal style*/
+  
+  .betaalmenu{
+    font-size: 15px;
+    
+  }
+  #continue{
+    background-color: orange;
+  }
+  
+  /* test login style */
+  
+  
+  
+  /* contact button */
+  /* input[type=submit]{
+    width: 8%;
+    height: 50px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, rgb(253, 177, 37) 0%, #b55234 100%);
+    border-radius: 0 5px 5px 0;
+    box-shadow:
+    inset 0 0 4px rgba(255, 255, 255, 0.7),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-left: 1px solid silver;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  } */

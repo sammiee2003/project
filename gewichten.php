@@ -1,33 +1,20 @@
 <?php 
     include 'includes/header.php'; 
+
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/gewichten.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-   
-
+    <title>Document</title>
 </head>
-
 <body>
-    >
-
-    
-
-    <main>
-
-
-
-    </main>
-
-    <?php
-    include 'includes/footer.php'
-    ?>
-    <script src="script.js"></script>
+    <main></main>
 </body>
-
 </html>
+<?php 
+    include 'includes/footer.php'; 
+?>

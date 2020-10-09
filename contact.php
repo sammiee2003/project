@@ -7,6 +7,7 @@
         <title>Contact us</title>
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="style/contacttest.css">
     </head>
     <body>
         <div class="container">
@@ -70,5 +71,8 @@
                 <div class="col-md-4"></div>
             </div>
         </div>
+        
     </body>
+
+    <?php include 'includes/footer.php'?>
 </html>
