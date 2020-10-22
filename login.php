@@ -13,6 +13,7 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <main>
 
 
 <?php
@@ -48,6 +49,7 @@
         <input type="submit" value="Login" name="submit" class="login-button"/>
         <p class="link"><a href="registration.php">New Registration</a></p>
   </form>
+    </main>
 <?php
     }
     include 'includes/footer.php'

@@ -59,7 +59,7 @@
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a
           jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
         </p>
-        <p><a class="btn btn-warning btn-lg" href="#" role="button">Naar alle pruducten &raquo;</a></p>
+        <p><a class="btn btn-warning btn-lg" href="producten.php" role="button">Naar alle pruducten &raquo;</a></p>
       </div>
     </div>
 
