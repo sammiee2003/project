@@ -5,9 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Contact us</title>
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link href="style/contacttest.css">
+        <link rel="stylesheet"href="style/contacttest.css">
     </head>
     <body>
         <main>
@@ -17,7 +15,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
 
-                    <h3>Contact us</h3>
+                    <h3>Contact</h3>
                     
                     <?php session_start(); ?>
                     <?php if (isset($_SESSION['success'])): ?>
@@ -36,7 +34,7 @@
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Name">
+                                    <input type="text" class="form-control" name="name" autocomplete="off" id="name" placeholder="Naam">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -50,7 +48,7 @@
                             <div class="col-md-12">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" autocomplete="off" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" autocomplete="off" id="subject" placeholder="onderwerp">
                                 </div>
                             </div>
                         </div>
@@ -58,18 +56,18 @@
                             <div class="col-md-12">
 
                                 <div class="form-group">
-                                    <textarea class="form-control textarea" rows="3" name="msg" id="msg" placeholder="msg"></textarea>
+                                    <textarea class="form-control textarea" rows="3" name="msg" id="msg" placeholder="bericht"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn get-start">Send a message</button>
+                                <button type="submit" class="btn btn-warning" id="send">Verstuur bericht</button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-4"></div>
+                
             </div>
         </div>
                         </main>

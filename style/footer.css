@@ -41,29 +41,11 @@
    
   }
   
-  #contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-  }
-  
-  /* login pagina */
-  
-  #login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+ 
   
   /* main product.html */
   
-  main{
-    height: 600px;
-    width: 100%;
-  }
+  
   
   
   
@@ -80,14 +62,5 @@
   
   
   
-  
-  /*betaal style*/
-  
-  .betaalmenu{
-    font-size: 15px;
-    
-  }
-  #continue{
-    background-color: orange;
-  }
+ 
   
