@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
     include 'includes/header.php'; 
+    include 'reg-server-config.php';
 ?>
 
 
@@ -23,6 +24,12 @@
 <body>
     <main>
     <div class="container">
+    <?php 
+        $stmt = $pdo->query("SELECT * FROM producten");
+        while ($row = $stmt->fetch()): 
+        $i = explode( ",", $row["size"]);
+        ?>
+
     <h3 class="h3">shopping Demo-7 </h3>
     <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -40,7 +47,7 @@
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -48,8 +55,25 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="size">
+                    <h3>Size :</h3>
+                   <?php 
+                    foreach ($i as $size) : 
+                    if(!empty($size)) :
+                        
+                   ?>
+                   <span><?= $size ?></span>
+                   <?php 
+                    endif;
+                    endforeach;
+                   ?>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span style="background-color:<?= $row["color"]?>"> </span>
+
+                    <div class="price">
+                        <span><?= $row["prijs"]?></span>
                     </div>
                 </div>
             </div>
@@ -68,7 +92,7 @@
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Women's White Shirt</a></h3>
+                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -76,7 +100,24 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
-                    <div class="price">$15.00</div>
+                    <div class="size">
+                    <h3>Size :</h3>
+                   <?php 
+                    foreach ($i as $size) : 
+                    if(!empty($size)) :
+                        
+                   ?>
+                   <span><?= $size ?></span>
+                   <?php 
+                    endif;
+                    endforeach;
+                   ?>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span style="background-color:<?= $row["color"]?>"> </span>
+
+                    <div class="price"><?= $row["prijs"]?></div>
                 </div>
             </div>
         </div>
@@ -95,7 +136,7 @@
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -103,8 +144,25 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="size">
+                    <h3>Size :</h3>
+                   <?php 
+                    foreach ($i as $size) : 
+                    if(!empty($size)) :
+                        
+                   ?>
+                   <span><?= $size ?></span>
+                   <?php 
+                    endif;
+                    endforeach;
+                   ?>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span style="background-color:<?= $row["color"]?>"> </span>
+
+                       <div class="price">
+                        <span><?= $row["prijs"]?></span>
                     </div>
                 </div>
             </div>
@@ -124,7 +182,7 @@
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -132,8 +190,25 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul> 
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="size">
+                    <h3>Size :</h3>
+                   <?php 
+                    foreach ($i as $size) : 
+                    if(!empty($size)) :
+                        
+                   ?>
+                   <span><?= $size ?></span>
+                   <?php 
+                    endif;
+                    endforeach;
+                   ?>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span style="background-color:<?= $row["color"]?>"> </span>
+
+                    <div class="price">
+                        <span><?= $row["prijs"]?></span>
                     </div>
                 </div>
             </div>
@@ -141,6 +216,8 @@
     </div>
 </div>
 <hr>
+<?php 
+        endwhile ?>
 
 
     </main>
