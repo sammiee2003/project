@@ -1,22 +1,21 @@
 <?php
 include 'includes/header.php';
-include 'reg-server-config.php';
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+$mysqli = new mysqli('localhost', 'root', '', 'adminpagina');
+if ($mysqli->connect_error) {
+    die('');
+}
 
-$name = "";
-$size = [];
-$allsizes = "";
-$prijs = "";
-$color = "";
-$error = [];
 
-if (isset($_post['submit'])) {
-    $name = $_post['name'];
-    $size = $_post['size'];
-    $prijs = $_post['price'];
-    $color = $_post['color'];
-
-    $stmt = $pdo->prepare("SELECT naam FROM producten WHERE naam = 1");
-    $stmt ->execute([$name]);
+if (isset($_POST['submit'])) {
+    $allsizes = '';
+    $errors = [];
+    $name = $_POST['name'];
+    $size = $_POST['size'];
+    $prijs = $_POST['price'];
+    $color = $_POST['color'];
 
     if (empty($name)) {
         $errors[] = "vul een naam in";
@@ -28,18 +27,43 @@ if (isset($_post['submit'])) {
         $errors[] = "vul de prijs in";
     }
     if (empty($color)) {
-        $errors[] = "select een kleur";
+        $errors[] = "select een kleur"; 
     }
 
     if(!$errors) {
         foreach ($size as $sizes){
-            $allsizes = $allsizes . $sizes . ",";
+            $allsizes.= $sizes . ",";
         }
-        $sql = "INSERT INTO producten (naam, size, prijs, color)";
-        $stmt = $pdo-> prepare($sql);
-        $stmt-> execute([$name,$allsizes,$prijs,$colors]);
+
+        $error = $_FILES["img"]["error"];
+        if ($error == UPLOAD_ERR_OK) {
+            $tmp_name = $_FILES["img"]["tmp_name"];
+            $dir = 'images/uploads/'.basename($_FILES["img"]["name"]);
+            move_uploaded_file($tmp_name, $dir);
+        }
+
+        $stmt = $mysqli->prepare("INSERT INTO producten (naam, size, color, prijs, img) VALUES (?,?,?,?,?)");
+        $stmt->bind_param('sssds', $name, $allsizes, $color, $prijs, $dir);
+        $stmt->execute();
     }
+
 }
+
+// $_FILES['bestand']['tmp_name'];
+
+// if(isset($_FILES['bestand'])) {
+//     //het bestand verplaatsten naar de juiste map op de server
+//     move_uploaded_file($_FILES['bestand']['tmp_name'], "project1/project/");
+//     //berichtje om te laten zien dat het bestand is opgeslagen
+//     echo "Het bestand is opgeslagen";
+// } else {
+//     //er is geen bestand geselecteerd
+//     echo "Selecteer een bestand";
+// }
+
+
+
+// move_upload_file($_FILE['img']['tmp_name'], 'project1/project/producten.php');
 
 ?>
 
@@ -55,22 +79,22 @@ if (isset($_post['submit'])) {
 
 <body>
     <main>
-        <form action="Admin.php" method="POST" enctype="multipart/form-data" class="form">
+        <form method="POST" class="form" ENCTYPE="multipart/form-data">
             <div class="name">
-                <input type="text" name="name" required placeholder="soort product">
+                <input type="text" name="name" placeholder="soort product">
             </div>
             <div class="size">
-                <input type="checkbox" name="size[]" value="xs">
-                <input type="checkbox" name="size[]" value="s">
-                <input type="checkbox" name="size[]" value="m">
-                <input type="checkbox" name="size[]" value="l">
-                <input type="checkbox" name="size[]" value="xl">
+                <input type="checkbox" name="size[]" value="xs">xs
+                <input type="checkbox" name="size[]" value="s">s
+                <input type="checkbox" name="size[]" value="m">m
+                <input type="checkbox" name="size[]" value="l">l
+                <input type="checkbox" name="size[]" value="xl">xl
             </div>
             <div class="price">
-                <input type="text" name="price" placeholder="€,-" required>
+                <input type="text" name="price" placeholder="€,-">
             </div>
             <div class="color">
-                <select name="colors">
+                <select name="color">
                     <option type="checkbox" value="red">rood</option>
                     <option type="checkbox" value="blue">blauw</option>
                     <option type="checkbox" value="yellow">geel</option>
@@ -79,6 +103,9 @@ if (isset($_post['submit'])) {
                     <option type="checkbox" value="black">zwart</option>
                     <option type="checkbox" value="grey">grijs</option>
                 </select>
+            </div>
+            <div class="img">
+                <input type="file" name="img" placeholder="select een afbeelding" accept="image/jpeg" >
             </div>
             <input type="submit" name="submit" value="Zet het online!">
         </form>

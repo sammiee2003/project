@@ -2,6 +2,33 @@
 <?php 
     include 'includes/header.php'; 
     include 'reg-server-config.php';
+    
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
+    session_start();
+
+    $connect = mysqli_connect('localhost', 'root', '', 'adminpagina');
+    if ($connect->connect_error) {
+    die('');
+}
+
+if(isset($_POST["submit"])){
+    $img = $_POST["img"];
+    $name = $_POST["naam"];
+    $size = $_POST["size"];
+    $prijs = $_POST["prijs"];
+    $color = $_POST["color"];
+
+
+    $stmt = $mysqli->prepare("INSERT INTO cart (naam, size, color, prijs, img) VALUES (?,?,?,?,?)");
+    $stmt->bind_param('sssds', $name, $size, $color, $prijs, $img);
+    $stmt->execute();
+}
+
+
+
 ?>
 
 
@@ -24,30 +51,30 @@
 <body>
     <main>
     <div class="container">
-    <?php 
+    
+
+    <div class="row">
+        <?php 
         $stmt = $pdo->query("SELECT * FROM producten");
         while ($row = $stmt->fetch()): 
         $i = explode( ",", $row["size"]);
         ?>
-
-    <h3 class="h3">shopping Demo-7 </h3>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
+        <div class="col-md-3 col-sm-6" >
+            <div class="product-grid7" method="POST" ENCTYPE="multipart/form-data">
                 <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-1.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-2.jpg">
+                    <a href="">
+                        <img class="img" name="img" src="<?= $row["img"]?>">
+                        
                     </a>
                     <ul class="social">
                         <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
+                        <li><a href="" type="submit" name="submit" class="fa fa-shopping-bag"></a></li>
+                        <li><a href="winkelwagen.php" class="fa fa-shopping-cart"></a></li>
                     </ul>
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
+                    <h3 class="title"><a href="#" name="naam"><?= $row["naam"]?></a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -56,164 +83,33 @@
                         <li class="fa fa-star"></li>
                     </ul>
                     <div class="size">
-                    <h3>Size :</h3>
+                    <h5>Size :</h5>
                    <?php 
                     foreach ($i as $size) : 
                     if(!empty($size)) :
                         
                    ?>
-                   <span><?= $size ?></span>
+                   <span name="size"><?= $size ?></span>
                    <?php 
                     endif;
                     endforeach;
                    ?>
                 </div>
                 <div class="color">
-                    <h3>Color :</h3>
-                    <span style="background-color:<?= $row["color"]?>"> </span>
-
-                    <div class="price">
-                        <span><?= $row["prijs"]?></span>
-                    </div>
+                    <h5 >Color : <span name="color"><?= $row["color"]?></span></h5>
                 </div>
+                <div class="price">
+                        <span name="prijs"><?= $row["prijs"]?></span>
+                </div>
+                <?php
+                echo '<a href="specifiek.php?id=' . $row['id'] . '">Bekijk details</a>' 
+                ?>
+                    
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-3.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-4.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="size">
-                    <h3>Size :</h3>
-                   <?php 
-                    foreach ($i as $size) : 
-                    if(!empty($size)) :
-                        
-                   ?>
-                   <span><?= $size ?></span>
-                   <?php 
-                    endif;
-                    endforeach;
-                   ?>
-                </div>
-                <div class="color">
-                    <h3>Color :</h3>
-                    <span style="background-color:<?= $row["color"]?>"> </span>
-
-                    <div class="price"><?= $row["prijs"]?></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-5.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-6.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="size">
-                    <h3>Size :</h3>
-                   <?php 
-                    foreach ($i as $size) : 
-                    if(!empty($size)) :
-                        
-                   ?>
-                   <span><?= $size ?></span>
-                   <?php 
-                    endif;
-                    endforeach;
-                   ?>
-                </div>
-                <div class="color">
-                    <h3>Color :</h3>
-                    <span style="background-color:<?= $row["color"]?>"> </span>
-
-                       <div class="price">
-                        <span><?= $row["prijs"]?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-7.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-8.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#"><?= $row["naam"]?></</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul> 
-                    <div class="size">
-                    <h3>Size :</h3>
-                   <?php 
-                    foreach ($i as $size) : 
-                    if(!empty($size)) :
-                        
-                   ?>
-                   <span><?= $size ?></span>
-                   <?php 
-                    endif;
-                    endforeach;
-                   ?>
-                </div>
-                <div class="color">
-                    <h3>Color :</h3>
-                    <span style="background-color:<?= $row["color"]?>"> </span>
-
-                    <div class="price">
-                        <span><?= $row["prijs"]?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+       
+        
+      
 </div>
 <hr>
 <?php 

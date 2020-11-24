@@ -2,7 +2,7 @@
     // Enter your host name, database username, password, and database name.
     // If you have not set database password on localhost then set empty.
 $host = '127.0.0.1:3306';
-$db   = 'AdminPagina';
+$db   = 'adminpagina';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';

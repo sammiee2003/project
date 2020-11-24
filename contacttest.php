@@ -1,8 +1,6 @@
 <?php 
     include 'includes/header.php'; 
-
-
-    print_r($_POST);
+    
     
     $message_send = false;
     
@@ -57,25 +55,8 @@
                 <div class="col-md-4">
 
                     <h3>Contact</h3>
-                    
-                    <?php session_start() ?>
-                    <?php if (isset($_SESSION['success'])): ?>
-                        <div class="alert alert-primary" role="alert">
-                            <!-- Bedankt voor uw bericht! -->
-                        </div>
-                    <?php endif; 
-                    
-                    
-                    
-                    ?>
-
-                    <form role="form" class="contact-form" action="data.php" method="post">
-
-
-                        <?php if (isset($_SESSION['error'])): ?>
-                            <div class="alert alert-warning"><?php echo $_SESSION['error']; ?></div>
-                        <?php endif; ?>
-                        <div class="row">
+                    <form class="contact-form" action="contacttest.php" method="POST">
+                    <div class="row">
                             <div class="col-md-6">
 
                                 <div class="form-group">
@@ -115,7 +96,7 @@
                         <?php endif;?>
             </div>
         </div>
-                        </main>
+    </main>
         
     </body>
 
