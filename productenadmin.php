@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <?php 
-    include 'includes/header.php'; 
+    include 'includes/header.admin.php'; 
     include 'reg-server-config.php';
+   
+
+ if($_SESSION['is_admin'] != 1){
+     header("Location: index.php");
+     exit;
+ }
     
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
@@ -38,7 +44,7 @@
 
     <div class="row">
         <?php 
-        $query = $mysqli->query("SELECT * FROM producten WHERE catogorie = 'gewichten'");
+        $query = $mysqli->query("SELECT * FROM producten");
         while ($row = mysqli_fetch_assoc($query)): 
         $i = explode( ",", $row["size"]);
         ?>
@@ -85,7 +91,7 @@
                         <span name="prijs"><?= $row["prijs"]?></span>
                 </div>
                 <?php
-                echo '<a href="specifiek.php?id=' . $row['id'] . '">Bekijk details</a>' 
+                echo '<a href="specifiekadmin.php?id=' . $row['id'] . '">Bekijk details</a>' 
                 ?>
                     
             </div>

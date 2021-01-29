@@ -1,7 +1,8 @@
 <?php 
-    include 'includes/header.php'; 
-    
-    
+    include 'includes/header.klant.php'; 
+    require('reg-server-config.php');
+
+  
     $message_send = false;
     
     if(isset($_POST['contact-email']) && $_POST['contact-email'] != ''){

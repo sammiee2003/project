@@ -1,11 +1,17 @@
 <?php
-include 'includes/header.php';
+include 'includes/header.admin.php';
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
-$mysqli = new mysqli('localhost', 'root', '', 'adminpagina');
-if ($mysqli->connect_error) {
-    die('');
+
+
+ 
+include 'reg-server-config.php';
+   
+
+if($_SESSION['is_admin'] != 1){
+    header("Location: index.php");
+    exit;
 }
 
 
@@ -16,6 +22,8 @@ if (isset($_POST['submit'])) {
     $size = $_POST['size'];
     $prijs = $_POST['price'];
     $color = $_POST['color'];
+    $cato = $_POST['cato'];
+    $gewicht = $_POST['gewicht'];
 
     if (empty($name)) {
         $errors[] = "vul een naam in";
@@ -30,6 +38,15 @@ if (isset($_POST['submit'])) {
         $errors[] = "select een kleur"; 
     }
 
+    if (empty($cato)) {
+        $errors[] = "select een catogorie"; 
+    }
+
+    if (empty($gewicht)) {
+        $errors[] = "vul een gewicht in"; 
+    }
+
+
     if(!$errors) {
         foreach ($size as $sizes){
             $allsizes.= $sizes . ",";
@@ -42,8 +59,8 @@ if (isset($_POST['submit'])) {
             move_uploaded_file($tmp_name, $dir);
         }
 
-        $stmt = $mysqli->prepare("INSERT INTO producten (naam, size, color, prijs, img) VALUES (?,?,?,?,?)");
-        $stmt->bind_param('sssds', $name, $allsizes, $color, $prijs, $dir);
+        $stmt = $mysqli->prepare("INSERT INTO producten (naam, size, color, prijs, img, catogorie, gewicht) VALUES (?,?,?,?,?,?,?)");
+        $stmt->bind_param('sssdssd', $name, $allsizes, $color, $prijs, $dir, $cato, $gewicht);
         $stmt->execute();
     }
 
@@ -106,6 +123,16 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="img">
                 <input type="file" name="img" placeholder="select een afbeelding" accept="image/jpeg" >
+            </div>
+            <div class="catogorie">
+                <select name="cato">
+                    <option type="checkbox" value="gewichten">gewichten</option>
+                    <option type="checkbox" value="elastieken">elastieken</option>
+                    <option type="checkbox" value="overig">overig</option>
+                </select>
+            </div>
+            <div class="gewicht">
+                <input type="text" name="gewicht" placeholder="kilogram">
             </div>
             <input type="submit" name="submit" value="Zet het online!">
         </form>

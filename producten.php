@@ -7,25 +7,8 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    session_start();
-
-    $connect = mysqli_connect('localhost', 'root', '', 'adminpagina');
-    if ($connect->connect_error) {
-    die('');
-}
-
-if(isset($_POST["submit"])){
-    $img = $_POST["img"];
-    $name = $_POST["naam"];
-    $size = $_POST["size"];
-    $prijs = $_POST["prijs"];
-    $color = $_POST["color"];
 
 
-    $stmt = $mysqli->prepare("INSERT INTO cart (naam, size, color, prijs, img) VALUES (?,?,?,?,?)");
-    $stmt->bind_param('sssds', $name, $size, $color, $prijs, $img);
-    $stmt->execute();
-}
 
 
 
@@ -55,8 +38,8 @@ if(isset($_POST["submit"])){
 
     <div class="row">
         <?php 
-        $stmt = $pdo->query("SELECT * FROM producten");
-        while ($row = $stmt->fetch()): 
+        $query = $mysqli->query("SELECT * FROM producten");
+        while ($row = mysqli_fetch_assoc($query)): 
         $i = explode( ",", $row["size"]);
         ?>
         <div class="col-md-3 col-sm-6" >

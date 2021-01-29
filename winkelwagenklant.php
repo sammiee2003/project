@@ -1,6 +1,6 @@
 <?php 
 require('reg-server-config.php');
-    include 'includes/header.php'; 
+    include 'includes/header.klant.php'; 
     
     if(isset($_POST["delete"])){
       unset($_SESSION["cart"]);
@@ -38,14 +38,14 @@ require('reg-server-config.php');
   $pid = $_POST['plus'];
   //CODE TO ADD TO QUANTITY????
   $_SESSION['cart'][$pid]['aantal']++;
-  header("Location: winkelwagen.php");
+  header("Location: winkelwagenklant.php");
   exit;
 } 
 if (isset( $_POST["min"])) {
     $pid = $_POST['min'];
     //CODE TO MIN TO QUANTITY????
     $_SESSION['cart'][$pid]['aantal']--;
-    header("Location: winkelwagen.php");
+    header("Location: winkelwagenklant.php");
   exit;
   }
 
@@ -167,8 +167,8 @@ if (isset( $_POST["min"])) {
       <button type="delete" name="delete" value="leeg winkelwagentje" id="delete">leeg winkelwagen</button>
         
     </div>
-    
-
+    </form>
+    <form method ="post" ENCTYPE="multipart/form-data" action="winkelwagenklant.php">
       <div class="mb-3">
         <div class="pt-4">
 
@@ -176,11 +176,27 @@ if (isset( $_POST["min"])) {
         </div>
       </div>
       
-            </form>
+           
     </div>
     
     <div class="col-lg-4">
+<?php 
+if (isset($_POST['submit'])){
+  
+if(!isset($_SESSION['afrekenen'])){
+      $_SESSION['afrekenen'][$pid] = array(
+          'totaalbedrag' => $totaal 
+      );
+  }
 
+  header("Location: betaalklant.php");
+  exit;
+
+}
+
+
+
+?>
   
       <div class="mb-3">
         <div class="pt-4">
@@ -208,7 +224,7 @@ if (isset( $_POST["min"])) {
           
           
           ?>
-          <button type="button" class="btn btn-warning btn-block">ga naar afrekenen</button>
+          <button type="submit" name="submit" class="btn btn-warning btn-block">ga naar afrekenen</a>
 
         </div>
       </div>
@@ -229,7 +245,7 @@ if (isset( $_POST["min"])) {
     
 
   </div>
- 
+ </form>
 
 </section>
 

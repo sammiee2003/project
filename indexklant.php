@@ -1,5 +1,8 @@
 <?php 
-    include 'includes/header.php'; 
+ require('reg-server-config.php');
+
+
+    include 'includes/header.klant.php'; 
 ?>
 
 <!doctype html>
@@ -67,7 +70,7 @@ Zijn er producten die u nog mist op onze site? Laat het ons weten via een van on
 
 
         </p>
-        <p><a class="btn btn-warning btn-lg" href="producten.php" role="button">Naar alle pruducten &raquo;</a></p>
+        <p><a class="btn btn-warning btn-lg" href="productenklant.php" role="button">Naar alle pruducten &raquo;</a></p>
       </div>
     </div>
 
@@ -88,7 +91,8 @@ Zijn er producten die u nog mist op onze site? Laat het ons weten via een van on
         </div>
         <div class="col-md-4">
         <h2>---------------------------</h2>
-        <p>retour is tot 7 dagen na de aankoop mogelijk als het artikel niet beschadigd is. voor meer informatie kunt u mailen naar musclemania.net@gmail.com</p><a href="retour.php">klik hier om naar het retourformulier te gaan</a>
+        <p>retour is tot 7 dagen na de aankoop mogelijk als het artikel niet beschadigd is. voor meer informatie kunt u mailen naar musclemania.net@gmail.com</p><a href="retourklant.php">klik hier om naar het retourformulier te gaan</a>
+        
         
          
        </div>

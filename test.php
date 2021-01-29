@@ -1,128 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
 <?php
-// Sessie starten
-session_start();
 
-// Database connectie maken
-include('Config.php');
-
-// Style pagina invoegen
-echo '<link rel="stylesheet" type="text/css" href="CSS/Winkelwagen.css" />';
-
-// Javascript voor updaten en deleten winkelwagen invoegen
-echo '<script type="text/javascript" src="Winkelwagen.js"></script>';
-
-// Kijk of er iets in de winkelwagen zit
-if(empty($_SESSION['winkelwagen']))
-{
-    echo '<p class="error">Uw winkelwagen is momenteel leeg.</p>';
-}
-// Anders
-else
-{
-    echo '<div class="wrapper">';
-        echo '<div class="row">';
-            echo '<p class="small"><b>Aantal:</b></p>';
-            echo '<p class="small"><b>Art. nr.:</b></p>';
-            echo '<p class="big"><b>Product:</b></p>';
-            echo '<p class="small"><b>Actie:</b></p>';
-            echo '<p class="small"><b>Prijs:</b></p>';
-        echo '</div>';
-    
-        // Exploden
-        $cart = explode('|', $_SESSION['winkelwagen']);
-
-        // Begin formulier
-        echo '<form action="Upd_winkelwagen.php" method="post">';
-            // Show winkelwagen
-            $i = 0;
-            foreach($cart as $products)
-            {
-                // Split
-                /*
-                $product[x] -->
-                    x == 0 -> product id
-                    x == 1 -> hoeveelheid
-                */
-                $product = explode(',', $products);
-        
-                // Get product info
-                $sql = mysql_query("SELECT * FROM producten WHERE id = '".intval($product[0])."'");
-              
-                // Als query gelukt is
-                if($sql)
-                {
-                    // Als er items zijn
-                    if(mysql_num_rows($sql) > 0)
-                    {
-                        // Alle items echoën
-                        $rec = mysql_fetch_assoc($sql);
-                        $i++;
-        
-                        // Verborgen vars
-                        echo '<input type="hidden" name="productnummer_'.$i.'" value="'.$product[0].'" />';
-                        
-                        echo '<div class="row">';
-                            // Aantal
-                            echo '<p class="small">';
-                                echo '<input type="text" class="aantal_w" name="hoeveelheid_'.$i.'" value="'.$product[1].'" size="2" maxlength="2" onKeyPress="return submitenter(this,event)" />';
-                            echo '</p>';
-                            
-                            // Artikel nummer
-                            echo '<p class="small">';
-                                if($rec['voorraad'] < $product[1])
-                                {
-                                    echo '<font style="color: #FF0000;">'.$product[0].'</font>';
-                                    $error = TRUE;
-                                }
-                                else
-                                {
-                                    echo $product[0];
-                                }
-                            echo '</p>';
-                            
-                            // titel
-                            echo '<p class="big">';
-                                echo $rec['titel'];
-                            echo '</p>';
-                            
-                            // Acties
-                            echo '<p class="small">';
-                                echo '<a href="javascript:removeItem('.$i.')">Del</a>';
-                            echo '</p>';
-                            
-                            // Prijs
-                            echo '<p class="small">';
-                                echo '&euro; '.($rec['prijs'] * $product[1]);
-                            echo '</p>';
-                        echo '</div>';
-                    }
-                    // Anders
-                    else
-                    {
-                        // Fout weergeven
-                        echo '<p class="error">Dit product is er niet meer.</p>';
-                    }
-                }
-                // Anders
-                else
-                {
-                    // Mysql error opvangen
-                    echo 'Er is een fout opgetreden in de query. <br />';
-                    echo mysql_error();
-                }
-            }
-        echo '</form>';
-        
-        if($error == TRUE)
-        {
-            echo '<p class="error">';
-                echo 'Van artikelen waarvan het artikelnummer rood is gekleurd hebben we niet voldoende op voorraad om je bestelling direct uit te kunnen leveren.';
-            echo '</p>';
+    function mysql_prep( $value ) {
+        $magic_quotes_active = get_magic_quotes_gpc();
+        $new_enough_php = function_exists( "mysql_real_escape_string" ); // i.e. PHP >= v4.3.0
+        if( $new_enough_php ) { // PHP v4.3.0 or higher
+            // undo any magic quote effects so mysql_real_escape_string can do the work
+            if( $magic_quotes_active ) { $value = stripslashes( $value ); }
+            $value = mysql_real_escape_string( $value );
+        } else { // before PHP v4.3.0
+            // if magic quotes aren't already on then add slashes manually
+            if( !$magic_quotes_active ) { $value = addslashes( $value ); }
+            // if magic quotes are active, then the slashes already exist
         }
-    echo '</div>';
-    
-    // Winkelwagen leeghalen & Afrekenen
-    echo '<a href="javascript:removeCart()">Winkelwagen leeghalen</a><br />';
-    echo '<a href="Afrekenen.php">Afrekenen</a></p>';
-}
+        return $value;
+    }
+
+    function redirect_to( $location = NULL ) {
+        if ($location != NULL) {
+            header("Location: {$location}");
+            exit;
+        }
+    }
+
 ?>
+<?php
+    if (isset($_POST['klopt']) && ($_POST['klopt']) == "waar" ) {
+
+        $errors = array();
+        
+            if (!empty($_POST['username'])){
+                if (strlen(trim(mysql_prep($_POST['username']))) <6 || strlen(trim(mysql_prep($_POST['username']))) >20) {
+                $errors[0] = "Username niet de juiste lengte";
+                }
+            } else {
+            $errors[0] = "Username niet ingevoerd";
+            }
+            
+            if (!empty($_POST['password'])){
+                if (strlen(trim(mysql_prep($_POST['password']))) <6 || strlen(trim(mysql_prep($_POST['password']))) >30) {
+                    $errors[1] = "password niet de juiste lengte";
+                }
+            } else {
+                $errors[1] = "Password niet ingevoerd";
+            }
+            
+        $username = trim(mysql_prep($_POST['username']));
+        $password = trim(mysql_prep($_POST['password']));
+        $hashed_password = sha1($password);
+                
+        if ( empty($errors) ) {
+            
+            $query = "SELECT id_accounts, username, voornaam, rechten ";
+            $query .= "FROM accounts ";
+            $query .= "WHERE username = '{$username}' ";
+            $query .= "AND hashed_password = '{$hashed_password}' ";
+            $query .= "LIMIT 1";
+            $result = mysql_query($query);
+            if (!$result) {
+                die("Database query failed: " . mysql_error());
+            }
+            $nummer = mysql_num_rows($result);
+            if ($nummer == 1) {
+
+                $found_user = mysql_fetch_array($result);
+                
+                    $_SESSION['id_accounts'] = $found_user['id_accounts'];
+                    $_SESSION['username'] = $found_user['username'];    
+                    $_SESSION['voornaam'] = $found_user['voornaam'];
+                    $_SESSION['rechten'] = $found_user['rechten'];
+                    if (!isset($found_user['rechten'])){
+                        exit;
+                    } elseif ($found_user['rechten'] == 1){
+                        header("Location: admin.php");
+                        exit;
+                    } elseif ($found_user['rechten'] == 0) {
+                        header("Location: klant.php");
+                    } else {
+                        exit;
+                    }
+            } else {
+                $message = "<br />Username/password combination incorrect.<br />
+                    Please make sure your caps lock key is off and try again.";
+            }
+            
+        } else {
+            $message = "";
+            if (isset ($errors[0])){$message =  "<br />" . $errors[0] . "<br />";}
+            if (isset ($errors[1])){$message =  "<br />" . $errors[1] . "<br />";}
+        }
+        
+    } else {
+        $username = "";
+        $password = "";
+    }
+
+?>
+<div id="content">
+<h1>Login</h1>
+<form action="test.php" method="post" name="f1">
+<table >
+<tr>
+<th>Username:</th>
+<td ><input type="text" name="username" maxlength="30" value="
+<?php echo htmlentities($username); ?>
+" /></td>
+</tr>
+<tr>
+<th>Password:</th>
+<td ><input type="password" name="password" maxlength="30" value="
+<?php echo htmlentities($password); ?>
+" /></td>
+</tr>
+<tr>
+<input type="hidden" name="klopt" value="waar">
+<td colspan="2" ><input type="submit" name="submit" value="Login" /></td>
+</tr>
+</table>
+</form>
+
+<?php
+    if (!empty($message)){
+        echo "" . $message;
+    }
+?>
+
+</div>
+</body>
+</html>

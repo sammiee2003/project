@@ -1,6 +1,15 @@
 <?php
     // Enter your host name, database username, password, and database name.
     // If you have not set database password on localhost then set empty.
+
+    session_start();
+
+    $mysqli = new mysqli('localhost', 'root', '', 'adminpagina');
+    if ($mysqli->connect_error) {
+        die('');
+    }
+
+    /*
 $host = '127.0.0.1:3306';
 $db   = 'adminpagina';
 $user = 'root';
@@ -18,3 +27,7 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int) $e->getCode());
 }
+*/
+
+?>
+

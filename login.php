@@ -1,5 +1,9 @@
 <?php 
     include 'includes/header.php'; 
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
 ?>
 
 
@@ -17,24 +21,41 @@
 
 
 <?php
-    require('db.php');
-    session_start();
+    require('reg-server-config.php');
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {
         $username = stripslashes($_REQUEST['username']);    // removes backslashes
-        $username = mysqli_real_escape_string($con, $username);
+        $username = mysqli_real_escape_string($mysqli, $username);
         $password = stripslashes($_REQUEST['password']);
-        $password = mysqli_real_escape_string($con, $password);
+        $password = mysqli_real_escape_string($mysqli, $password);
         // Check user is exist in the database
         $query    = "SELECT * FROM `users` WHERE username='$username'
                      AND password='" . md5($password) . "'";
-        $result = mysqli_query($con, $query) or die(mysql_error());
+        $result = mysqli_query($mysqli, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
+            
+
+            while($obj = mysqli_fetch_assoc($result)){
+                $is_admin = $obj['is_admin'];
+            }
+
+           
+            $_SESSION['is_admin'] = $is_admin;
             $_SESSION['username'] = $username;
-            // Redirect to user dashboard page
-            header("Location: index.php");
-        } else {
+
+            if($is_admin == 1){
+                header("Location: indexadmin.php");
+            }else{
+               
+                header("Location: indexklant.php");
+            }
+
+            exit;
+            
+        }
+        
+        else {
             header("Location: opnieuw.php");
         }
     } else {

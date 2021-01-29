@@ -1,10 +1,13 @@
 <?php
 require('reg-server-config.php');
+
+
+
 // Enter your host name, database username, password, and database name.
 // If you have not set database password on localhost then set empty.
 
 
-include 'includes/header.php';
+include 'includes/header.klant.php';
 
 
 if(isset($_POST['submit'])){
@@ -23,7 +26,7 @@ if(isset($_POST['submit'])){
         $_SESSION['cart'][$pid]['aantal'] = $currentQty + $qty;
     }
 
-    header("Location: winkelwagen.php");
+    header("Location: winkelwagenklant.php");
     exit;
 
 }
@@ -59,7 +62,7 @@ if(isset($_POST['submit'])){
                 foreach ($stmt as $row){ 
                 ?>
 
-                <form method="post" ENCTYPE="multipart/form-data" action="specifiek.php?action=add&pid=<?php echo $row["id"]; ?>">
+                <form method="post" ENCTYPE="multipart/form-data" action="specifiekklant.php?action=add&pid=<?php echo $row["id"]; ?>">
 					<div class="product col-md-3 service-image-left" name="img">
                         <img class="img" name="img" src="<?= $row["img"]?>">
                     </div>

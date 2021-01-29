@@ -1,6 +1,13 @@
 <?php 
 require('reg-server-config.php');
-    include 'includes/header.php'; 
+    include 'includes/header.admin.php'; 
+    
+   if(empty($_SESSION['cart'])){
+?>
+<P id= "leeg">uw winkelwagen is leeg</p>
+<?php
+}else{
+    
     
     if(isset($_POST["delete"])){
       unset($_SESSION["cart"]);
@@ -38,14 +45,14 @@ require('reg-server-config.php');
   $pid = $_POST['plus'];
   //CODE TO ADD TO QUANTITY????
   $_SESSION['cart'][$pid]['aantal']++;
-  header("Location: winkelwagen.php");
+  header("Location: winkelwagenadmin.php");
   exit;
 } 
 if (isset( $_POST["min"])) {
     $pid = $_POST['min'];
     //CODE TO MIN TO QUANTITY????
     $_SESSION['cart'][$pid]['aantal']--;
-    header("Location: winkelwagen.php");
+    header("Location: winkelwagenadmin.php");
   exit;
   }
 
@@ -57,7 +64,7 @@ if (isset( $_POST["min"])) {
 
 
 ?>
- <form method="POST" ENCTYPE="multipart/form-data" action="winkelwagenklant.php">
+ <form method="POST" ENCTYPE="multipart/form-data" action="winkelwagenadmin.php">
   <div class="row" >
 
   
@@ -239,7 +246,8 @@ if (isset( $_POST["min"])) {
 </body>
 </html>
 <?php 
-  
+  }
 //unset($_session['cart']);
 include 'includes/footer.php';
+
 ?>

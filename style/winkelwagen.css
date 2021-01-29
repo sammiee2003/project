@@ -7,16 +7,27 @@
     background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
-    height: 1100px;
+    
     width: 100%;
     
   }
+
+#delete{
+  height: 50px;
+  width: 100px;
+  background-color: orange;
+}
   
-  
-  
- 
-  
-  section{
-    height: 1000px;
-    width: 100%;
+section{
+    height: 100%;
+    width: 96%;
+  }
+
+  .img{
+    height: 100%;
+    width: 100%
+  }
+
+  #leeg{
+    height: 550px
   }

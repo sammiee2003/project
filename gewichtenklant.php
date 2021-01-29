@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php 
-    include 'includes/header.php'; 
+    include 'includes/header.klant.php'; 
     include 'reg-server-config.php';
+    
+
+ 
     
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
@@ -85,7 +88,7 @@
                         <span name="prijs"><?= $row["prijs"]?></span>
                 </div>
                 <?php
-                echo '<a href="specifiek.php?id=' . $row['id'] . '">Bekijk details</a>' 
+                echo '<a href="specifiekklant.php?id=' . $row['id'] . '">Bekijk details</a>' 
                 ?>
                     
             </div>
